@@ -82,9 +82,6 @@ export default function HeroSection() {
                   <stop offset="50%" stopColor="#f0dca0" />
                   <stop offset="100%" stopColor="#d4a843" />
                 </linearGradient>
-                <clipPath id="archClip">
-                  <path d="M 0,520 L 0,220 C 0,160 50,160 100,120 C 150,80 180,60 200,10 C 220,60 250,80 300,120 C 350,160 400,160 400,220 L 400,520 Z" />
-                </clipPath>
                 <filter id="archGlow">
                   <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#d4a843" floodOpacity="0.3" />
                 </filter>
