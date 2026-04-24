@@ -1,0 +1,133 @@
+.page {
+  padding-top: calc(var(--nav-height) + 40px);
+  background-color: var(--teal-deep);
+  color: var(--text-light);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+
+.headerTitle {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.headerDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-family: var(--font-plus-jakarta);
+}
+
+.galleryContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+}
+
+/* Masonry Grid */
+.masonryGrid {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.masonryItem {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-12);
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5; /* default, can be overridden inline if needed */
+}
+
+/* Add a gold border hint to the masonry items */
+.masonryItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gold);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  border-radius: var(--radius-12);
+  pointer-events: none;
+}
+
+.masonryItem:hover::after {
+  opacity: 0.5;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-smooth);
+}
+
+.masonryItem:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(42, 2, 2, 0.9), transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity var(--transition-med);
+}
+
+.masonryItem:hover .overlay {
+  opacity: 1;
+}
+
+.itemTitle {
+  font-family: var(--font-playfair);
+  color: var(--cream);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  transform: translateY(20px);
+  transition: transform var(--transition-med);
+}
+
+.itemLocation {
+  font-family: var(--font-plus-jakarta);
+  color: var(--emerald-light);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: translateY(20px);
+  transition: transform var(--transition-med);
+  transition-delay: 0.05s;
+}
+
+.masonryItem:hover .itemTitle,
+.masonryItem:hover .itemLocation {
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .masonryGrid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonryGrid {
+    column-count: 1;
+  }
+}

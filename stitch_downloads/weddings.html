@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eternal Legacies - L'ÉLITE CINÉMA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&amp;family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#b4cbc6",
+                      "primary-fixed": "#ffdad7",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-container": "#a3bab5",
+                      "inverse-primary": "#84504e",
+                      "surface-container-highest": "#353534",
+                      "on-secondary-fixed": "#0a1f1c",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-fixed": "#ffe088",
+                      "on-error": "#690005",
+                      "inverse-on-surface": "#313030",
+                      "outline-variant": "#514342",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-surface": "#e5e2e1",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#d6c2c0",
+                      "secondary-container": "#364b47",
+                      "on-tertiary": "#3c2f00",
+                      "on-tertiary-container": "#4f3e00",
+                      "error-container": "#93000a",
+                      "on-primary-fixed": "#34100f",
+                      "on-secondary": "#203431",
+                      "surface-tint": "#f8b6b2",
+                      "surface-dim": "#131313",
+                      "surface": "#131313",
+                      "secondary-fixed": "#d0e7e2",
+                      "primary-container": "#2d0a0a",
+                      "on-primary-container": "#aa716e",
+                      "surface-variant": "#353534",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "primary": "#f8b6b2",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#f8b6b2",
+                      "tertiary-container": "#cca730",
+                      "on-secondary-fixed-variant": "#364b47",
+                      "surface-container-high": "#2a2a2a",
+                      "on-primary-fixed-variant": "#693a38",
+                      "surface-bright": "#393939",
+                      "outline": "#9e8d8b",
+                      "tertiary": "#e9c349",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "secondary": "#b4cbc6",
+                      "background": "#131313",
+                      "on-primary": "#4e2423",
+                      "surface-container": "#201f1f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "gutter": "24px",
+                      "container-padding": "40px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "label-caps": [
+                              "Epilogue"
+                      ],
+                      "headline-xl": [
+                              "Noto Serif"
+                      ],
+                      "body-md": [
+                              "Epilogue"
+                      ],
+                      "body-lg": [
+                              "Epilogue"
+                      ],
+                      "headline-md": [
+                              "Noto Serif"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 shadow-none border-b border-white/5 bg-[#2D0A0A]/60 dark:bg-[#2D0A0A]/60 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 md:px-16 h-20">
+<div class="text-xl md:text-2xl font-serif italic tracking-tighter text-[#D4AF37]">
+                L'ÉLITE CINÉMA
+            </div>
+<div class="hidden md:flex gap-8 items-center font-serif tracking-widest uppercase text-xs md:text-sm">
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Philosophy</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Awards</a>
+<a class="text-[#D4AF37] border-b border-[#D4AF37] pb-1 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500 opacity-80 scale-95 transition-transform" href="#">Portfolio</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Process</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">FAQs</a>
+</div>
+<button class="hidden md:block font-label-caps text-label-caps text-[#D4AF37] border border-[#D4AF37] px-6 py-3 bg-white/5 backdrop-blur-md hover:bg-[#D4AF37]/10 transition-colors">
+                BOOK A SESSION
+            </button>
+<button class="md:hidden text-[#D4AF37]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-section-gap px-container-padding max-w-[1600px] mx-auto w-full">
+<!-- Header -->
+<header class="text-center mb-16 md:mb-24 flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 tracking-widest uppercase">The Archive</span>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-6">Eternal Legacies</h1>
+<div class="w-24 h-px bg-tertiary/30 mb-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                A curated collection of cinematic moments, capturing the profound elegance of monumental celebrations across the globe.
+            </p>
+</header>
+<!-- Masonry Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px] md:auto-rows-[400px]">
+<!-- Item 1 (Verona) - Spans 8 cols -->
+<article class="col-span-1 md:col-span-8 row-span-1 md:row-span-2 relative group overflow-hidden rounded-xl border border-tertiary/20 bg-surface-container-low">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700 z-10"></div>
+<img alt="Cinematic wedding photography in Verona, Italy, featuring a couple on a historic balcony with dramatic lighting and deep burgundy tones." class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out" data-alt="Cinematic wedding photography in Verona, Italy, featuring a couple on a historic balcony with dramatic lighting and deep burgundy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB86onHktiGAniz5qCBKHxtjkylHfS7qxUUdanfQbpkXLqQgrbw-Ph7i10RbS07UAEAZKv8WpG_EOOMy3N_xgqcQKiwHyTMCoCTMX6Ld9Ay8GMGVgF6UM5kMGvuo3_FSFDhZ2Ns7UErZH8k7Vgtl43JJ93haH9wyjbhhnFgFKD6RoJ9Lz41HUhQa1BbtXKsdxTmdzcwnPH_eK6voqUqBzwwWYLIbs9bdvTN0OKJ2va8horkEyg85uxsPQE2QeRVY4Kp6uEGM7GlcQH"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center justify-center px-3 py-1 rounded bg-primary-container/80 backdrop-blur-md border border-tertiary/30 font-label-caps text-label-caps text-tertiary">CINEMATIC</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Verona, Italy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">The Montecchi Estate Celebration</p>
+</div>
+</article>
+<!-- Item 2 (Udaipur) - Spans 4 cols -->
+<article class="col-span-1 md:col-span-4 row-span-1 relative group overflow-hidden rounded-xl border border-tertiary/20 bg-surface-container-low">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700 z-10"></div>
+<img alt="High-end wedding cinematography in Udaipur, India, showcasing a grand palace illuminated with golden lights reflecting on the lake at twilight." class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out" data-alt="High-end wedding cinematography in Udaipur, India, showcasing a grand palace illuminated with golden lights reflecting on the lake at twilight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdyXRvOLCdIsOnqwNbPZgwyPHPnvLhImsuljJanP_pNK3oHru-UXNGS7A98B_CzkHykTosw4_5wQZB-zXYAeBoxaFwWrA-7gC1v5l534t7GN76oxNI_PtwlqWFwP5nQnHoiaQmvhba5TpZjUXHAV-KtIR6OEi7bF6uM6AHnTInXZ1EePtIu5_UBSb_kuH3LNJ_vCHHRLUS9FrQYGL-KMkhZn5MtunZyzUjtv8qMqavhKhezyiU5r3HxkHR5FW69SIjpJZYpLLTjAyl"/>
+<div class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black/80 to-transparent">
+<h2 class="font-headline-md text-headline-md text-on-background">Udaipur, India</h2>
+</div>
+</article>
+<!-- Item 3 (Paris) - Spans 4 cols -->
+<article class="col-span-1 md:col-span-4 row-span-1 relative group overflow-hidden rounded-xl border border-tertiary/20 bg-surface-container-low">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700 z-10"></div>
+<img alt="Elegant wedding moment in Paris, France, captured in black and white with a subtle gold tint, showing detailed lacework on a gown." class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out" data-alt="Elegant wedding moment in Paris, France, captured in black and white with a subtle gold tint, showing detailed lacework on a gown." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4J3EEsWfnyT3AuZN8I5alKh3UoENiIey8FXM_JZIeXY7yIqGL9seYDE4SbZuTzNSiY3BMkLzJeMEGATDknVXOOb4pxsPDbJ86s42ykOxc_5dptSbBFMPClAJQeYZAM5DlM9LdIcpLIJkE1Pey-7wJjGQwolrgqeWUt5rthIdRdszuMvpcE_FgCfnL5Re__uQsxrCYuQhQifsOOV-XAIB3LO7HOAIxQeT1awbff1H4NF2B5r7-MQRe6Z1pHWPITNQCxuWtKNAAWf2y"/>
+<div class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black/80 to-transparent">
+<h2 class="font-headline-md text-headline-md text-on-background">Paris, France</h2>
+</div>
+</article>
+<!-- Item 4 (Kyoto) - Spans 12 cols (Full width banner) -->
+<article class="col-span-1 md:col-span-12 row-span-1 md:row-span-1 relative group overflow-hidden rounded-xl border border-tertiary/20 bg-surface-container-low mt-8">
+<div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-700 z-10"></div>
+<img alt="Serene wedding photography in Kyoto, Japan, featuring an ancient temple garden draped in autumn colors and warm golden hour sunlight." class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out" data-alt="Serene wedding photography in Kyoto, Japan, featuring an ancient temple garden draped in autumn colors and warm golden hour sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9AJdXiAqssqBNFoiNCdX5peUvttHxMofzRBazz5TQGSEMIoUqyPna51SflGq4QFtAWUZgNIFyMQ_wFNpFgG0E7mbrDAOHnH3ml3zV9xanMrb6qYLxZu62TRpu6h2B7KAqvZF8eTXTJpiNXRu3wh99WYUnpU3L0cKWEymaVL95Y08GhkHDAnJf2orFNmq38hnwHVIZupKj0xpBaa6CYtXtwGxWaNDZxqTTgqu5HZaFVAshnAwNQrvHNcJPSTXNSW6kbjddElcHhbGf"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-8 z-20 text-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="inline-flex items-center justify-center px-3 py-1 rounded bg-primary-container/80 backdrop-blur-md border border-tertiary/30 font-label-caps text-label-caps text-tertiary">EDITORIAL</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Kyoto, Japan</h2>
+<button class="font-label-caps text-label-caps text-on-background border-b border-tertiary pb-1 hover:text-tertiary transition-colors uppercase tracking-widest mt-4">View Film</button>
+</div>
+</article>
+</div>
+<div class="mt-20 flex justify-center">
+<button class="font-label-caps text-label-caps text-tertiary border border-tertiary px-8 py-4 bg-white/5 backdrop-blur-md hover:bg-tertiary/10 transition-colors uppercase tracking-widest">
+                Explore Full Archive
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-white/5 bg-[#1A0505] dark:bg-[#1A0505]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-8 fade-in duration-500">
+<div class="text-lg font-serif italic text-[#D4AF37]">
+                L'ÉLITE CINÉMA
+            </div>
+<div class="font-serif tracking-widest uppercase text-[10px] text-white/40 text-center md:text-left">
+                © 2024 L'ÉLITE CINÉMA. PRESERVING LEGACIES THROUGH CINEMATIC ART.
+            </div>
+<div class="flex gap-6 font-serif tracking-widest uppercase text-[10px]">
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Instagram</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Contact</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

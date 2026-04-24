@@ -1,0 +1,200 @@
+.page {
+  padding-top: calc(var(--nav-height) + 40px);
+  background-color: var(--teal-deep);
+  color: var(--text-light);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background mandala/texture element */
+.bgTexture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--emerald-light) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.headerTitle {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.headerDesc {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-family: var(--font-plus-jakarta);
+}
+
+.gridSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.glassPanel {
+  background: rgba(42, 2, 2, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(236, 182, 19, 0.15);
+  border-radius: var(--radius-12);
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+  position: relative;
+  overflow: hidden;
+}
+
+.glassPanel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--emerald-light), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.glassPanel:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-gold);
+  border-color: rgba(236, 182, 19, 0.4);
+}
+
+.glassPanel:hover::before {
+  opacity: 1;
+}
+
+.awardIcon {
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.awardTitle {
+  font-size: 1.6rem;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.awardDesc {
+  font-family: var(--font-plus-jakarta);
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.awardYear {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(236, 182, 19, 0.1);
+  border: 1px solid rgba(236, 182, 19, 0.2);
+  border-radius: 40px;
+  font-family: var(--font-plus-jakarta);
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+}
+
+/* Featured Lens Section */
+.featuredSection {
+  background: var(--navy); /* Contrast section */
+  padding: 100px 24px;
+  position: relative;
+  border-top: 1px solid rgba(236, 182, 19, 0.2);
+  border-bottom: 1px solid rgba(236, 182, 19, 0.2);
+}
+
+.featuredGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.featuredImageWrapper {
+  position: relative;
+  height: 500px;
+  border-radius: var(--radius-12);
+  overflow: hidden;
+}
+
+.featuredImg {
+  object-fit: cover;
+}
+
+.featuredGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(26,46,53,0.2), var(--navy));
+}
+
+.featuredTitle {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.featuredDesc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.featuredBtn {
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-family: var(--font-plus-jakarta);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.featuredBtn:hover {
+  background: var(--gold);
+  color: var(--teal-deep);
+}
+
+@media (max-width: 900px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .featuredGradient {
+    background: linear-gradient(to top, var(--navy), transparent);
+  }
+}

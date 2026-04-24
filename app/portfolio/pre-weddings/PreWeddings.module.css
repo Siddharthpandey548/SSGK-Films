@@ -1,0 +1,124 @@
+.page {
+  padding-top: calc(var(--nav-height) + 40px);
+  background-color: var(--teal-deep);
+  color: var(--text-light);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+}
+
+.headerTitle {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.headerDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-family: var(--font-plus-jakarta);
+}
+
+.galleryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+}
+
+/* Asymmetrical Grid */
+.asymGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+.gridItem {
+  position: relative;
+  border-radius: var(--radius-12);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-deep);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-smooth);
+}
+
+.gridItem:hover .image {
+  transform: scale(1.04);
+}
+
+/* Specific Grid Layouts for visual interest */
+.gridItem:nth-child(1) { grid-column: span 8; aspect-ratio: 16/9; }
+.gridItem:nth-child(2) { grid-column: span 4; aspect-ratio: 3/4; }
+.gridItem:nth-child(3) { grid-column: span 4; aspect-ratio: 4/5; }
+.gridItem:nth-child(4) { grid-column: span 8; aspect-ratio: 16/9; }
+.gridItem:nth-child(5) { grid-column: span 6; aspect-ratio: 1/1; }
+.gridItem:nth-child(6) { grid-column: span 6; aspect-ratio: 1/1; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 2, 2, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity var(--transition-med);
+  border: 1px solid var(--emerald-light);
+  border-radius: var(--radius-12);
+}
+
+.gridItem:hover .overlay {
+  opacity: 1;
+}
+
+.itemTitle {
+  font-family: var(--font-playfair);
+  color: var(--cream);
+  font-size: 2rem;
+  margin-bottom: 12px;
+  text-align: center;
+  transform: translateY(15px);
+  transition: transform var(--transition-med);
+}
+
+.itemDesc {
+  font-family: var(--font-plus-jakarta);
+  color: var(--gold-light);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  transform: translateY(15px);
+  transition: transform var(--transition-med);
+  transition-delay: 0.05s;
+}
+
+.gridItem:hover .itemTitle,
+.gridItem:hover .itemDesc {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .asymGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .gridItem {
+    width: 100%;
+    aspect-ratio: 4/5 !important;
+  }
+}
