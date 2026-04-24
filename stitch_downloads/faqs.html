@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Navigating Your Story - FAQs</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&amp;family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#b4cbc6",
+                      "primary-fixed": "#ffdad7",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-container": "#a3bab5",
+                      "inverse-primary": "#84504e",
+                      "surface-container-highest": "#353534",
+                      "on-secondary-fixed": "#0a1f1c",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-fixed": "#ffe088",
+                      "on-error": "#690005",
+                      "inverse-on-surface": "#313030",
+                      "outline-variant": "#514342",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-surface": "#e5e2e1",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#d6c2c0",
+                      "secondary-container": "#364b47",
+                      "on-tertiary": "#3c2f00",
+                      "on-tertiary-container": "#4f3e00",
+                      "error-container": "#93000a",
+                      "on-primary-fixed": "#34100f",
+                      "on-secondary": "#203431",
+                      "surface-tint": "#f8b6b2",
+                      "surface-dim": "#131313",
+                      "surface": "#131313",
+                      "secondary-fixed": "#d0e7e2",
+                      "primary-container": "#2d0a0a",
+                      "on-primary-container": "#aa716e",
+                      "surface-variant": "#353534",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "primary": "#f8b6b2",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#f8b6b2",
+                      "tertiary-container": "#cca730",
+                      "on-secondary-fixed-variant": "#364b47",
+                      "surface-container-high": "#2a2a2a",
+                      "on-primary-fixed-variant": "#693a38",
+                      "surface-bright": "#393939",
+                      "outline": "#9e8d8b",
+                      "tertiary": "#e9c349",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "secondary": "#b4cbc6",
+                      "background": "#131313",
+                      "on-primary": "#4e2423",
+                      "surface-container": "#201f1f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "gutter": "24px",
+                      "container-padding": "40px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "label-caps": [
+                              "Epilogue"
+                      ],
+                      "headline-xl": [
+                              "Noto Serif"
+                      ],
+                      "body-md": [
+                              "Epilogue"
+                      ],
+                      "body-lg": [
+                              "Epilogue"
+                      ],
+                      "headline-md": [
+                              "Noto Serif"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Hide default detail marker */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopNavBar Shared Component -->
+<nav class="bg-[#2D0A0A]/60 dark:bg-[#2D0A0A]/60 backdrop-blur-xl font-serif tracking-widest uppercase text-xs md:text-sm fixed top-0 w-full z-50 border-b border-white/5 shadow-none flex justify-between items-center px-8 md:px-16 h-20">
+<div class="text-xl md:text-2xl font-serif italic tracking-tighter text-[#D4AF37]">
+            L'ÉLITE CINÉMA
+        </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Philosophy</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Awards</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Portfolio</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Process</a>
+<a class="text-[#D4AF37] border-b border-[#D4AF37] pb-1 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">FAQs</a>
+</div>
+<div class="hidden md:block">
+<button class="bg-transparent border border-[#D4AF37] text-[#D4AF37] px-6 py-2 text-xs tracking-widest hover:bg-[#D4AF37]/10 transition-colors">
+                BOOK A SESSION
+            </button>
+</div>
+<!-- Mobile Menu Icon (Visual Only) -->
+<div class="md:hidden text-[#D4AF37]">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</nav>
+<!-- Main Content Area with Burgundy Background Image -->
+<main class="flex-grow relative pt-20">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0 bg-primary-container">
+<img class="w-full h-full object-cover opacity-10 mix-blend-luminosity" data-alt="close up macro shot of a professional camera lens with intricate glass elements reflecting soft warm light against a dark moody studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfGz2-M290ehQ4GDbYfzBg7ZHz0OpiHso6uGGvFxtc-9lq6vNjtPSRoRK2OawCl4beWjFgfo8ks5vywI72LEXHgtPblPbJ1CFLc8phiAQtzVrEUP9f1F1mr0BrtZ5_t2z4_YSh3z0_01OhEDstOvN8U2x69ieRLA9KOpcwrCpNZZwHC_Ncrv4VqywfmtAnBs-4FtTOLSc6gI0iDiFM-2gxI8qGX4R51mMuukNrulP0J_pm-s3aUN2kGZ3c5rbw6_tXTXRxBhB3crl1"/>
+<!-- Tonal gradient for depth -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary-container/90 via-primary-container/70 to-background"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 py-32 md:py-48 flex flex-col items-center">
+<!-- Header -->
+<div class="text-center mb-24 max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-tertiary mb-6">Navigating Your Story</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Clarity is the foundation of a masterpiece. Below you will find the answers to our most common inquiries regarding our process, style, and international engagements.
+                </p>
+</div>
+<!-- Accordion FAQ Section -->
+<div class="w-full space-y-2 border-t border-tertiary/20">
+<!-- FAQ Item 1 -->
+<details class="group py-6 border-b border-tertiary/20" open="">
+<summary class="flex justify-between items-center cursor-pointer font-headline-md text-headline-md text-on-surface group-open:text-tertiary transition-colors duration-300">
+<span>What is the Cinematic Legacy style?</span>
+<span class="material-symbols-outlined text-tertiary transform group-open:rotate-180 transition-transform duration-300">keyboard_arrow_down</span>
+</summary>
+<div class="mt-6 font-body-lg text-body-lg text-on-surface-variant pl-4 md:pl-8 border-l border-tertiary/30">
+                        Our Cinematic Legacy style goes beyond traditional event photography. We treat your life milestones as scenes in a grand film, utilizing dramatic lighting, editorial composition, and thoughtful direction to create visual heirlooms that possess the depth and gravitas of motion pictures.
+                    </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group py-6 border-b border-tertiary/20">
+<summary class="flex justify-between items-center cursor-pointer font-headline-md text-headline-md text-on-surface group-open:text-tertiary transition-colors duration-300">
+<span>Do you offer international services?</span>
+<span class="material-symbols-outlined text-tertiary transform group-open:rotate-180 transition-transform duration-300">keyboard_arrow_down</span>
+</summary>
+<div class="mt-6 font-body-lg text-body-lg text-on-surface-variant pl-4 md:pl-8 border-l border-tertiary/30">
+                        Yes. L'Élite Cinéma frequently travels globally to document exclusive events. International commissions require advanced booking and are subject to custom logistical arrangements to ensure our entire suite of equipment and personnel can be accommodated seamlessly.
+                    </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group py-6 border-b border-tertiary/20">
+<summary class="flex justify-between items-center cursor-pointer font-headline-md text-headline-md text-on-surface group-open:text-tertiary transition-colors duration-300">
+<span>How long is the post-production process?</span>
+<span class="material-symbols-outlined text-tertiary transform group-open:rotate-180 transition-transform duration-300">keyboard_arrow_down</span>
+</summary>
+<div class="mt-6 font-body-lg text-body-lg text-on-surface-variant pl-4 md:pl-8 border-l border-tertiary/30">
+                        True art cannot be rushed. Our meticulous post-production process, which includes individualized color grading, spatial retouching, and narrative sequencing, typically requires 8 to 12 weeks following your event. A preview collection is generally provided within the first 14 days.
+                    </div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="group py-6 border-b border-tertiary/20">
+<summary class="flex justify-between items-center cursor-pointer font-headline-md text-headline-md text-on-surface group-open:text-tertiary transition-colors duration-300">
+<span>Are raw files provided?</span>
+<span class="material-symbols-outlined text-tertiary transform group-open:rotate-180 transition-transform duration-300">keyboard_arrow_down</span>
+</summary>
+<div class="mt-6 font-body-lg text-body-lg text-on-surface-variant pl-4 md:pl-8 border-l border-tertiary/30">
+                        To maintain the integrity of the L'Élite Cinéma aesthetic, we do not release raw, unedited files. The cinematic look you are commissioning us for is heavily dependent on our proprietary post-production techniques. You will receive a fully curated and finalized masterpiece.
+                    </div>
+</details>
+<!-- FAQ Item 5 -->
+<details class="group py-6 border-b border-tertiary/20">
+<summary class="flex justify-between items-center cursor-pointer font-headline-md text-headline-md text-on-surface group-open:text-tertiary transition-colors duration-300">
+<span>How do we begin the booking process?</span>
+<span class="material-symbols-outlined text-tertiary transform group-open:rotate-180 transition-transform duration-300">keyboard_arrow_down</span>
+</summary>
+<div class="mt-6 font-body-lg text-body-lg text-on-surface-variant pl-4 md:pl-8 border-l border-tertiary/30">
+                        The process begins with an initial consultation, either in person at our studio or via private video conference. This allows us to understand the scope of your narrative. Following this, a custom proposal and creative brief will be presented for your review.
+                    </div>
+</details>
+</div>
+<!-- Support Call to Action -->
+<div class="mt-24 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Require further elucidation?</p>
+<button class="bg-surface-container-highest/50 backdrop-blur-md border border-tertiary text-tertiary font-label-caps text-label-caps px-8 py-4 hover:bg-tertiary hover:text-on-tertiary transition-all duration-300 tracking-widest">
+                    CONTACT THE STUDIO
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-[#1A0505] dark:bg-[#1A0505] font-serif tracking-widest uppercase text-[10px] w-full py-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-12 mx-auto gap-8 z-10 relative">
+<div class="text-lg font-serif italic text-[#D4AF37]">
+            L'ÉLITE CINÉMA
+        </div>
+<div class="flex space-x-6">
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Instagram</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Contact</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Privacy</a>
+</div>
+<div class="text-white/40 text-center md:text-right">
+            © 2024 L'ÉLITE CINÉMA. PRESERVING LEGACIES THROUGH CINEMATIC ART.
+        </div>
+</footer>
+</body></html>

@@ -307,7 +307,7 @@
 .archPath {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  animation: drawArch 1.5s ease-in-out 0.5s forwards;
+  animation: drawArch 3s ease-in-out 0.5s forwards;
 }
 
 /* === Responsive === */

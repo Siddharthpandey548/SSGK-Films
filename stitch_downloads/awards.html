@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Distinctions of Artistry - SSGK Films</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&amp;family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "secondary-fixed-dim": "#b4cbc6",
+                            "primary-fixed": "#ffdad7",
+                            "surface-container-low": "#1c1b1b",
+                            "on-secondary-container": "#a3bab5",
+                            "inverse-primary": "#84504e",
+                            "surface-container-highest": "#353534",
+                            "on-secondary-fixed": "#0a1f1c",
+                            "inverse-surface": "#e5e2e1",
+                            "tertiary-fixed": "#ffe088",
+                            "on-error": "#690005",
+                            "inverse-on-surface": "#313030",
+                            "outline-variant": "#514342",
+                            "on-error-container": "#ffdad6",
+                            "on-tertiary-fixed": "#241a00",
+                            "on-surface": "#e5e2e1",
+                            "error": "#ffb4ab",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-surface-variant": "#d6c2c0",
+                            "secondary-container": "#364b47",
+                            "on-tertiary": "#3c2f00",
+                            "on-tertiary-container": "#4f3e00",
+                            "error-container": "#93000a",
+                            "on-primary-fixed": "#34100f",
+                            "on-secondary": "#203431",
+                            "surface-tint": "#f8b6b2",
+                            "surface-dim": "#131313",
+                            "surface": "#131313",
+                            "secondary-fixed": "#d0e7e2",
+                            "primary-container": "#2d0a0a",
+                            "on-primary-container": "#aa716e",
+                            "surface-variant": "#353534",
+                            "tertiary-fixed-dim": "#e9c349",
+                            "primary": "#f8b6b2",
+                            "on-background": "#e5e2e1",
+                            "primary-fixed-dim": "#f8b6b2",
+                            "tertiary-container": "#cca730",
+                            "on-secondary-fixed-variant": "#364b47",
+                            "surface-container-high": "#2a2a2a",
+                            "on-primary-fixed-variant": "#693a38",
+                            "surface-bright": "#393939",
+                            "outline": "#9e8d8b",
+                            "tertiary": "#e9c349",
+                            "on-tertiary-fixed-variant": "#574500",
+                            "secondary": "#b4cbc6",
+                            "background": "#131313",
+                            "on-primary": "#4e2423",
+                            "surface-container": "#201f1f"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "section-gap": "80px",
+                            "gutter": "24px",
+                            "container-padding": "40px",
+                            "base": "8px"
+                    },
+                    "fontFamily": {
+                            "headline-lg": [
+                                    "Noto Serif"
+                            ],
+                            "label-caps": [
+                                    "Epilogue"
+                            ],
+                            "headline-xl": [
+                                    "Noto Serif"
+                            ],
+                            "body-md": [
+                                    "Epilogue"
+                            ],
+                            "body-lg": [
+                                    "Epilogue"
+                            ],
+                            "headline-md": [
+                                    "Noto Serif"
+                            ]
+                    },
+                    "fontSize": {
+                            "headline-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "1.2",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "label-caps": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "1.0",
+                                            "letterSpacing": "0.15em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "headline-xl": [
+                                    "64px",
+                                    {
+                                            "lineHeight": "1.1",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "1.6",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "1.6",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "1.3",
+                                            "fontWeight": "500"
+                                    }
+                            ]
+                    }
+            },
+                },
+            }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(45, 10, 10, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-left: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .text-gold {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#2D0A0A]/60 dark:bg-[#2D0A0A]/60 backdrop-blur-xl border-b border-white/5 shadow-none">
+<div class="flex justify-between items-center w-full px-8 md:px-16 h-20">
+<div class="text-xl md:text-2xl font-serif italic tracking-tighter text-[#D4AF37]">
+                L'ÉLITE CINÉMA
+            </div>
+<div class="hidden md:flex gap-8 items-center font-serif tracking-widest uppercase text-xs md:text-sm">
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Philosophy</a>
+<a class="text-[#D4AF37] border-b border-[#D4AF37] pb-1 opacity-80 scale-95 transition-transform" href="#">Awards</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Portfolio</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">Process</a>
+<a class="text-white/60 dark:text-white/60 hover:text-white dark:hover:text-[#D4AF37] transition-all duration-500" href="#">FAQs</a>
+</div>
+<button class="font-label-caps text-label-caps bg-transparent border border-[#D4AF37] text-[#D4AF37] px-6 py-3 rounded-DEFAULT hover:bg-[#D4AF37]/10 transition-colors hidden md:block">
+                BOOK A SESSION
+            </button>
+<button class="md:hidden text-[#D4AF37]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-[120px] pb-section-gap px-container-padding max-w-[1440px] mx-auto w-full">
+<!-- Header Section -->
+<header class="text-center mb-section-gap max-w-4xl mx-auto">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6">Distinctions of Artistry</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Recognized globally for preserving legacies through unparalleled cinematic excellence.</p>
+</header>
+<!-- Awards Grid -->
+<section class="mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Award 1 -->
+<div class="glass-panel p-8 rounded-xl flex flex-col items-center text-center group hover:bg-[#2D0A0A]/80 transition-colors duration-500">
+<span class="material-symbols-outlined text-5xl text-gold mb-6 group-hover:scale-110 transition-transform duration-500" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Cannes Lions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Grand Prix for Cinematic Storytelling</p>
+<div class="mt-4 font-label-caps text-label-caps text-tertiary">2023</div>
+</div>
+<!-- Award 2 -->
+<div class="glass-panel p-8 rounded-xl flex flex-col items-center text-center group hover:bg-[#2D0A0A]/80 transition-colors duration-500">
+<span class="material-symbols-outlined text-5xl text-gold mb-6 group-hover:scale-110 transition-transform duration-500" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Vogue</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Feature: The Art of Legacy Photography</p>
+<div class="mt-4 font-label-caps text-label-caps text-tertiary">2022</div>
+</div>
+<!-- Award 3 -->
+<div class="glass-panel p-8 rounded-xl flex flex-col items-center text-center group hover:bg-[#2D0A0A]/80 transition-colors duration-500">
+<span class="material-symbols-outlined text-5xl text-gold mb-6 group-hover:scale-110 transition-transform duration-500" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Harper's Bazaar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Top 10 International Studios</p>
+<div class="mt-4 font-label-caps text-label-caps text-tertiary">2023</div>
+</div>
+<!-- Award 4 -->
+<div class="glass-panel p-8 rounded-xl flex flex-col items-center text-center group hover:bg-[#2D0A0A]/80 transition-colors duration-500">
+<span class="material-symbols-outlined text-5xl text-gold mb-6 group-hover:scale-110 transition-transform duration-500" style="font-variation-settings: 'FILL' 1;">movie</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Sundance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Best Short Documentary Selection</p>
+<div class="mt-4 font-label-caps text-label-caps text-tertiary">2021</div>
+</div>
+<!-- Award 5 -->
+<div class="glass-panel p-8 rounded-xl flex flex-col items-center text-center group hover:bg-[#2D0A0A]/80 transition-colors duration-500">
+<span class="material-symbols-outlined text-5xl text-gold mb-6 group-hover:scale-110 transition-transform duration-500" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">PDN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Faces Portrait Photography Winner</p>
+<div class="mt-4 font-label-caps text-label-caps text-tertiary">2020</div>
+</div>
+<!-- Award 6 -->
+<div class="glass-panel p-8 rounded-xl flex flex-col items-center text-center group hover:bg-[#2D0A0A]/80 transition-colors duration-500">
+<span class="material-symbols-outlined text-5xl text-gold mb-6 group-hover:scale-110 transition-transform duration-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">GQ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Men of the Year Aesthetic Contributor</p>
+<div class="mt-4 font-label-caps text-label-caps text-tertiary">2022</div>
+</div>
+</div>
+</section>
+<!-- Featured Publication Section -->
+<section class="mb-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="relative w-full h-[600px] rounded-xl overflow-hidden glass-panel">
+<img alt="close up of a professional camera lens reflecting a studio setup with dark dramatic lighting" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80 grayscale" data-alt="close up of a professional camera lens reflecting a studio setup with dark dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGvLHT-JHMC6gcW_TKJ2RCL06vA7VRRuOv21G3nJ7xeTecwlU1-esyVQ1zE21YzaYSiz2YwenbvhAC-TF-fQ4HEv1dcv0PGGpHIECC6HzWplw7PWU5yz_Gvv6Ctq8R3VNMyRtKRMcBnTO3-v1lPoXuncPuqgJs6FHY7aj5YqrU9V87e9Q28Dr3rDbJSb8GhZKGM6d1UnfU1yiIuUo95Z44_h6TPLWdrIMcXH4JhFvZGxCzy2W9H6U7v8ZiSI2FYQpSsrQd21Lw0mMy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6 border-b border-white/10 pb-4">Featured Lens</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Our equipment and vision were recently profiled in an exclusive piece detailing the rigorous standards required to capture legacy-defining moments. The intersection of technical mastery and artistic intuition forms the foundation of our recognized aesthetic.
+                    </p>
+<div class="flex gap-4">
+<button class="font-label-caps text-label-caps bg-transparent border border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-DEFAULT hover:bg-[#D4AF37]/10 transition-colors uppercase">
+                            Read Article
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Visual Section -->
+<section class="mb-section-gap relative h-[400px] rounded-xl overflow-hidden glass-panel flex items-center justify-center">
+<img alt="abstract elegant gold fluid simulation on dark background conveying luxury and motion" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="abstract elegant gold fluid simulation on dark background conveying luxury and motion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBll_frY9PUHK5ykAxlEN0nGbCu9TO9HNBx3w6O2WbE2jFucatTHr6FbmyhFB-s-5OvElObgazjckQ5kf6YPKhBxn_pDDEWoZ6EMI9cw0P6gZZNB2DTFlhMrW_vh3SwBR4dXy1BZT4WnjHYt6WwJp-QAaY_mAki7i2MasHuJCu-3IuklEogrXoKgW6asieMMiVbkZz3XdxVpzzDBFo1e5RLHcG1LZuJxEzON2kbXqHnx7bKjeGQA8SBqtgjYq5cB4afqenCBcWHCgTM"/>
+<div class="absolute inset-0 bg-background/40"></div>
+<div class="relative z-10 text-center max-w-2xl px-6">
+<span class="material-symbols-outlined text-4xl text-gold mb-4" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline-md text-headline-md text-on-surface italic">"A masterclass in shadow, light, and the enduring power of a captured moment."</p>
+<div class="mt-6 font-label-caps text-label-caps text-tertiary">- THE CRITICS CIRCLE</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1A0505] dark:bg-[#1A0505] w-full py-12 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-8 fade-in duration-500">
+<div class="text-lg font-serif italic text-[#D4AF37]">
+                L'ÉLITE CINÉMA
+            </div>
+<div class="font-serif tracking-widest uppercase text-[10px] text-white/40 text-center md:text-left">
+                © 2024 L'ÉLITE CINÉMA. PRESERVING LEGACIES THROUGH CINEMATIC ART.
+            </div>
+<div class="flex gap-6 font-serif tracking-widest uppercase text-[10px]">
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Instagram</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Contact</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-white/40 hover:text-white transition-colors duration-300" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

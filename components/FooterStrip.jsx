@@ -19,6 +19,7 @@ export default function FooterStrip() {
               <li><Link href="/about">About</Link></li>
               <li><Link href="/philosophy">Philosophy</Link></li>
               <li><Link href="/awards">Awards</Link></li>
+              <li><Link href="/our-craft">Our Craft</Link></li>
             </ul>
           </div>
 
@@ -27,8 +28,8 @@ export default function FooterStrip() {
             <h3 className={styles.groupTitle}>Portfolio</h3>
             <ul className={styles.linksList}>
               <li><Link href="/portfolio/weddings">Weddings</Link></li>
-              <li><Link href="/portfolio/pre-weddings">Pre-weddings</Link></li>
-              <li><Link href="/portfolio/films">Films</Link></li>
+              <li><Link href="/portfolio/pre-weddings">Pre-Weddings</Link></li>
+              <li><Link href="/films">Films</Link></li>
             </ul>
           </div>
 
@@ -36,9 +37,10 @@ export default function FooterStrip() {
           <div className={styles.linkGroup}>
             <h3 className={styles.groupTitle}>Resources</h3>
             <ul className={styles.linksList}>
+              <li><Link href="/process">Process</Link></li>
               <li><Link href="/faqs">FAQs</Link></li>
               <li><Link href="/journal">Journal</Link></li>
-              <li><Link href="/process">Process</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
 
