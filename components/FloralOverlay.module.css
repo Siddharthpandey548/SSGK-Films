@@ -1,0 +1,182 @@
+/* ================================================
+   FLORAL OVERLAY STYLES
+   ================================================ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* === Positioned SVG Elements === */
+.element {
+  position: absolute;
+  will-change: transform;
+}
+
+.topLeft {
+  top: -20px;
+  left: -30px;
+  animation: sway 14s ease-in-out infinite;
+}
+
+.topRight {
+  top: -20px;
+  right: -30px;
+  animation: sway 15s ease-in-out infinite reverse;
+}
+
+.bottomLeft {
+  bottom: -80px;
+  left: -60px;
+  animation: sway 16s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.bottomRight {
+  bottom: -30px;
+  right: -30px;
+  animation: sway 14s ease-in-out infinite reverse;
+  animation-delay: -5s;
+}
+
+/* === Flowers === */
+.flower {
+  position: absolute;
+  filter: drop-shadow(0 2px 8px rgba(212, 168, 67, 0.25));
+  will-change: transform;
+}
+
+.flowerTL {
+  top: 8%;
+  left: 12%;
+  animation: floatFlower 10s ease-in-out infinite;
+}
+
+.flowerTC {
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatFlower 12s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.flowerBL {
+  bottom: 8%;
+  left: 8%;
+  animation: floatFlower 11s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.flowerBR {
+  bottom: 10%;
+  right: 10%;
+  animation: floatFlower 9s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+/* === Jasmine Flowers === */
+.jasmine {
+  position: absolute;
+  filter: drop-shadow(0 1px 4px rgba(245, 217, 138, 0.3));
+  animation: floatJasmine 8s ease-in-out infinite;
+}
+
+.jasmine1 { animation-delay: 0s; }
+.jasmine2 { animation-delay: -1.2s; }
+.jasmine3 { animation-delay: -2.4s; }
+.jasmine4 { animation-delay: -0.8s; }
+.jasmine5 { animation-delay: -3s; }
+
+/* === Bead Clusters === */
+.beadCluster {
+  position: absolute;
+  animation: shimmerBeads 7s ease-in-out infinite;
+}
+
+.beads1 { animation-delay: 0s; }
+.beads2 { animation-delay: -1s; }
+.beads3 { animation-delay: -2s; }
+.beads4 { animation-delay: -0.5s; }
+.beads5 { animation-delay: -3s; }
+
+/* === Animations === */
+@keyframes sway {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(3px, -2px, 0) rotate(0.5deg); }
+  50% { transform: translate3d(-2px, 3px, 0) rotate(-0.3deg); }
+  75% { transform: translate3d(1px, -1px, 0) rotate(0.2deg); }
+}
+
+@keyframes floatFlower {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -6px, 0) rotate(3deg); }
+}
+
+@keyframes floatJasmine {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
+  50% { transform: translate3d(0, -4px, 0) scale(1.05); opacity: 1; }
+}
+
+@keyframes shimmerBeads {
+  0%, 100% { opacity: 0.7; transform: scale(1) translateZ(0); }
+  50% { opacity: 1; transform: scale(1.05) translateZ(0); }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .topLeft,
+  .topRight,
+  .bottomLeft,
+  .bottomRight {
+    transform: scale(0.5);
+  }
+
+  .topLeft { top: -50px; left: -70px; }
+  .topRight { top: -50px; right: -70px; }
+  .bottomLeft { bottom: -60px; left: -70px; }
+  .bottomRight { bottom: -60px; right: -70px; }
+
+  .flower {
+    transform: scale(0.6);
+  }
+
+  .flowerTC {
+    top: 0.5%;
+  }
+
+  .jasmine,
+  .beadCluster {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .topLeft,
+  .topRight,
+  .bottomLeft,
+  .bottomRight {
+    transform: scale(0.35);
+  }
+
+  .topLeft { top: -70px; left: -90px; }
+  .topRight { top: -70px; right: -90px; }
+  .bottomLeft { bottom: -80px; left: -90px; }
+  .bottomRight { bottom: -80px; right: -90px; }
+
+  .flower {
+    transform: scale(0.45);
+  }
+
+  /* Hide some beads on very small screens for cleanliness */
+  .beadCluster {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  .jasmine {
+    transform: scale(0.5);
+  }
+}

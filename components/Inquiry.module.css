@@ -1,0 +1,336 @@
+/* === Scroll Animation === */
+@keyframes slideInUp {
+  from { opacity: 0.3; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animateIn { animation: slideInUp 0.6s ease-out both; }
+
+@media (max-width: 768px) {
+  .animateIn {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.section {
+  position: relative;
+  background-color: #041a13; /* Dark Emerald Green */
+  padding: 8rem 0;
+  color: var(--cream);
+  overflow: hidden;
+  border-top: 1px solid rgba(236, 182, 19, 0.1);
+}
+
+/* === Ambient Effects === */
+.lightRays {
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 0%, rgba(232, 199, 106, 0.1) 0%, transparent 60%);
+  transform: rotate(-15deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.petalsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50% 0 50% 0;
+  opacity: 0.2;
+  filter: blur(1px);
+}
+
+.petal1 { top: 10%; left: 80%; animation: float 15s infinite ease-in-out; }
+.petal2 { top: 70%; left: 10%; animation: float 20s infinite ease-in-out reverse; }
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+  50% { transform: translateY(-80px) rotate(180deg); opacity: 0.4; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0.1; }
+}
+
+/* === Layout === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* === Left Col: CTA & Contact === */
+.infoCol {
+  flex: 1;
+  max-width: 450px;
+}
+
+.heading {
+  font-family: var(--font-playfair), serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.headingGold {
+  font-family: var(--font-philosopher), serif;
+  color: var(--gold);
+  font-style: italic;
+}
+
+.bodyText {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--cream-soft);
+  margin-bottom: 4rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contactLabel {
+  display: block;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.contactValue {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.2rem;
+  color: var(--cream);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contactValue:hover {
+  color: var(--gold-light);
+}
+
+/* === Right Col: Form === */
+.formCol {
+  flex: 1;
+  max-width: 550px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(236, 182, 19, 0.3);
+  padding: 10px 0;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 1rem;
+  color: var(--cream);
+  outline: none;
+  transition: border-color var(--transition-normal);
+  resize: vertical;
+}
+
+/* Hide default placeholder to use label as floating placeholder */
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: transparent;
+}
+
+.inputGroup label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: all var(--transition-normal);
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-bottom-color: var(--gold);
+}
+
+.inputGroup input:focus + label,
+.inputGroup input:not(:placeholder-shown) + label,
+.inputGroup textarea:focus + label,
+.inputGroup textarea:not(:placeholder-shown) + label {
+  top: -15px;
+  font-size: 0.75rem;
+  color: var(--gold);
+}
+
+/* Fix for date input */
+.inputGroup input[type="date"] {
+  color: var(--cream);
+}
+.inputGroup input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(350deg);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* === Submit Button === */
+.submitBtn {
+  margin-top: 1rem;
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-playfair), serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(236, 182, 19, 0.1);
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--gold);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.submitBtn:hover {
+  color: var(--teal-deep);
+  box-shadow: 0 0 25px rgba(236, 182, 19, 0.4);
+}
+
+.submitBtn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.plus {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0 1.5rem;
+  }
+  
+  .infoCol, .formCol {
+    max-width: 100%;
+  }
+
+  .heading {
+    font-size: 2.8rem;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .container {
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .heading {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    text-align: center;
+  }
+
+  .bodyText {
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .contactDetails {
+    align-items: center;
+  }
+
+  .contactLabel, .contactValue {
+    text-align: center;
+  }
+
+  .form {
+    gap: 2rem;
+  }
+
+  .submitBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    gap: 2.5rem;
+    padding: 0 0.8rem;
+  }
+
+  .bodyText {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+}

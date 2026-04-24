@@ -1,0 +1,129 @@
+.inquirySection {
+  padding: 8rem 2rem;
+  background: var(--navy-light);
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.textSide h2 {
+  font-size: 3.5rem;
+  color: var(--gold-light);
+  margin-bottom: 1.5rem;
+}
+
+.decorativeLine {
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.contactInfo p {
+  color: var(--gold-cream);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-playfair);
+}
+
+.formSide {
+  background: rgba(30, 9, 12, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.formBorder {
+  border: 1px solid var(--gold-dark);
+  padding: 3rem;
+  border-radius: 4px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.inputGroup label {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.input, .textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed rgba(212, 168, 67, 0.4);
+  padding: 1rem;
+  color: var(--ivory);
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-gold);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--gold-dark);
+  color: var(--teal-deep);
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: var(--transition-med);
+}
+
+.submitBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,108 @@
+.scrollNarrative {
+  position: relative;
+  height: 300vh; /* The distance the user scrolls to see the whole narrative */
+  background: var(--teal-deep);
+  z-index: 10;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* The pinned window */
+  overflow: hidden;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  will-change: opacity;
+}
+
+.bgImage {
+  position: absolute;
+  inset: -10%; /* Extra bounding box to allow scaling without seeing edges */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  will-change: transform;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 9, 12, 0.4) 0%,
+    rgba(30, 9, 12, 0.8) 100%
+  );
+  z-index: 2;
+}
+
+.textContent {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  will-change: opacity;
+}
+
+.textContent h2 {
+  font-size: 5rem;
+  color: var(--gold-light);
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5);
+}
+
+.textContent p {
+  font-size: 1.5rem;
+  color: var(--ivory);
+  line-height: 1.8;
+  font-family: var(--font-inter);
+  text-shadow: 0 2px 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .scrollNarrative {
+    height: 300vh; /* Keep same as desktop — 3 scenes need room */
+  }
+
+  .textContent {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .textContent h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .textContent p {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollNarrative {
+    height: 280vh; /* Slightly shorter but still enough for 3 scenes */
+  }
+
+  .textContent h2 {
+    font-size: 1.8rem;
+  }
+
+  .textContent p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+}

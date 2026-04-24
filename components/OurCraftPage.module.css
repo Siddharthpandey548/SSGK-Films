@@ -1,0 +1,236 @@
+.page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  background: var(--teal-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-playfair), serif;
+  font-size: 10vw;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.015);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: 0.08em;
+}
+
+/* === Hero === */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImageWrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.heroImage {
+  object-fit: cover;
+  filter: sepia(0.3) brightness(0.5);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(42, 2, 2, 0.5) 0%, rgba(42, 2, 2, 0.9) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 2rem;
+}
+
+.heroTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.heroSub {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--cream-soft);
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* === Container === */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Section Title === */
+.sectionTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+/* === Split Section === */
+.splitSection {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.splitCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 168, 67, 0.08);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.splitCard:hover {
+  border-color: rgba(212, 168, 67, 0.2);
+}
+
+.splitImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.splitImage {
+  object-fit: cover;
+  filter: sepia(0.2) brightness(0.8);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.splitCard:hover .splitImage {
+  filter: sepia(0) brightness(0.9);
+  transform: scale(1.03);
+}
+
+.splitCardTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.splitCardText {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--cream-soft);
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+/* === Equipment Section === */
+.equipSection {
+  padding: 4rem 0 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.equipGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+.equipCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 168, 67, 0.08);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.equipCard:hover {
+  border-color: rgba(212, 168, 67, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+}
+
+.equipIcon {
+  color: var(--gold);
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.equipName {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 0.3rem;
+}
+
+.equipType {
+  display: block;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.7rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.equipDesc {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .splitGrid {
+    grid-template-columns: 1fr;
+  }
+  .equipGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .equipGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero {
+    height: 55vh;
+  }
+}

@@ -1,0 +1,375 @@
+/* ================================================
+   FULLSCREEN MENU — Mobile Navigation Overlay
+   ================================================ */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: linear-gradient(160deg, #1a0505 0%, var(--teal-deep) 40%, #150101 100%);
+  z-index: 1000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* === Ambient Glow === */
+.ambientGlow {
+  position: fixed;
+  top: 30%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212, 168, 67, 0.06), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === Floating Petals === */
+.petalsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50% 0 50% 0;
+  opacity: 0.2;
+  filter: blur(1px);
+}
+
+.petal1 { top: 15%; left: 8%; animation: float 15s infinite ease-in-out; }
+.petal2 { top: 55%; right: 12%; animation: float 20s infinite ease-in-out reverse; }
+.petal3 { bottom: 20%; left: 25%; animation: float 18s infinite ease-in-out; }
+.petal4 { top: 35%; right: 30%; animation: float 25s infinite ease-in-out reverse; }
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+  50% { transform: translateY(-60px) rotate(180deg); opacity: 0.4; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0.1; }
+}
+
+/* === Content Container === */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+/* === Top Bar === */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  flex-shrink: 0;
+}
+
+.menuLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logoIcon {
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 6px rgba(232, 199, 106, 0.4));
+}
+
+.logoText {
+  font-family: var(--font-philosopher), sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--cream);
+  letter-spacing: 0.05em;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  cursor: pointer;
+  padding: 0.6rem;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 168, 67, 0.2);
+}
+
+.closeBtn:hover,
+.closeBtn:active {
+  transform: rotate(90deg);
+  color: var(--gold-light);
+  border-color: rgba(212, 168, 67, 0.4);
+}
+
+/* === Navigation Section === */
+.navSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.linksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* === Menu Links === */
+.menuLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  min-height: 52px;
+}
+
+.menuLink:hover,
+.menuLink:active {
+  background: rgba(212, 168, 67, 0.06);
+}
+
+.activeLink {
+  background: rgba(212, 168, 67, 0.08);
+  border-left: 3px solid var(--gold);
+}
+
+.linkNumber {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  min-width: 1.5rem;
+}
+
+.linkText {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.menuLink:hover .linkText,
+.menuLink:active .linkText {
+  color: var(--gold-light);
+}
+
+.activeLink .linkText {
+  color: var(--gold);
+}
+
+.activeDot {
+  color: var(--gold);
+  font-size: 0.5rem;
+  margin-left: auto;
+}
+
+/* === Bottom Section === */
+.bottomSection {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid rgba(212, 168, 67, 0.1);
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--teal-deep);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(236, 182, 19, 0.25);
+  min-height: 48px;
+}
+
+.ctaButton:hover,
+.ctaButton:active {
+  box-shadow: 0 6px 25px rgba(236, 182, 19, 0.4);
+  transform: translateY(-1px);
+}
+
+/* === Contact Row === */
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contactLink {
+  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 0.8rem;
+  color: var(--cream-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contactLink:hover {
+  color: var(--gold-light);
+}
+
+.contactDivider {
+  color: rgba(212, 168, 67, 0.3);
+  font-size: 0.7rem;
+}
+
+/* === Social Row === */
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.socialIcon {
+  color: var(--cream-soft);
+  opacity: 0.7;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.socialIcon:hover {
+  color: var(--gold-light);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* === Desktop — Show image on large screens === */
+@media (min-width: 901px) {
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .navSection {
+    padding: 3rem 0;
+  }
+
+  .linksCol {
+    max-width: 500px;
+  }
+
+  .linkText {
+    font-size: 2.5rem;
+  }
+
+  .menuLink {
+    padding: 1rem 1.2rem;
+    min-height: 60px;
+  }
+
+  .menuLink:hover {
+    transform: translateX(10px);
+  }
+
+  .ctaButton {
+    max-width: 360px;
+  }
+}
+
+/* === Small Mobile === */
+@media (max-width: 480px) {
+  .content {
+    padding: 0 1.2rem;
+  }
+
+  .linkText {
+    font-size: 1.5rem;
+  }
+
+  .menuLink {
+    padding: 0.7rem 0.8rem;
+    gap: 0.8rem;
+    min-height: 48px;
+  }
+
+  .linksCol {
+    gap: 0.15rem;
+  }
+
+  .ctaButton {
+    font-size: 0.72rem;
+    padding: 0.85rem 1.2rem;
+  }
+
+  .contactLink {
+    font-size: 0.75rem;
+  }
+
+  .bottomSection {
+    padding: 1rem 0 1.5rem;
+    gap: 1rem;
+  }
+}
+
+/* === Very Small Mobile (iPhone SE, etc.) === */
+@media (max-width: 360px) {
+  .linkText {
+    font-size: 1.3rem;
+  }
+
+  .menuLink {
+    padding: 0.6rem 0.6rem;
+    min-height: 44px;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+}

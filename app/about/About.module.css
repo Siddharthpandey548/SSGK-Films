@@ -1,0 +1,126 @@
+.aboutPage {
+  padding: calc(var(--nav-height) + 4rem) 2rem 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.textContent {
+  color: var(--text-light);
+}
+
+.textContent h1 {
+  font-size: 4rem;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.decorativeLine {
+  width: 100px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.lead {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--gold-cream);
+  margin-bottom: 2rem;
+}
+
+.textContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.statsRow {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(212, 168, 67, 0.2);
+}
+
+.statLine {
+  display: flex;
+  flex-direction: column;
+}
+
+.statNumber {
+  font-family: var(--font-playfair);
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.imageColumn {
+  position: relative;
+}
+
+.ornateFrame {
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  border-radius: 4px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: var(--shadow-deep);
+}
+
+.cornerBorder {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+  border-top: 3px solid var(--gold);
+  border-right: 3px solid var(--gold);
+}
+
+.signatureBadge {
+  position: absolute;
+  bottom: -30px;
+  left: -40px;
+  background: var(--teal-mid);
+  padding: 1.5rem 2.5rem;
+  border: 1px solid var(--gold-dark);
+  box-shadow: var(--shadow-gold);
+  transform: rotate(-5deg);
+}
+
+.signatureBadge .signature {
+  color: var(--gold-light);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

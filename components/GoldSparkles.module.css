@@ -1,0 +1,17 @@
+/* ================================================
+   GOLD SPARKLES STYLES
+   ================================================ */
+
+.sparkleCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .sparkleCanvas {
+    opacity: 0.5;
+  }
+}

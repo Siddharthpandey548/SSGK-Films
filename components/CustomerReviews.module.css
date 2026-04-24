@@ -1,0 +1,299 @@
+/* === Scroll Animation === */
+@keyframes slideInUp {
+  from { opacity: 0.3; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animateIn { animation: slideInUp 0.6s ease-out both; }
+
+@media (max-width: 768px) {
+  .animateIn {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.reviewsSection {
+  padding: 8rem 2rem;
+  background: var(--teal-deep);
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.header h2 {
+  font-size: 3.5rem;
+  color: var(--gold-light);
+  margin-bottom: 1.5rem;
+}
+
+.decorativeLine {
+  width: 100px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto;
+}
+
+.reviewLayout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.namesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-right: 1px solid rgba(212, 168, 67, 0.2);
+  padding-right: 2rem;
+}
+
+.nameBtn {
+  text-align: left;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-med);
+  border-radius: 4px;
+  position: relative;
+  opacity: 0.5;
+}
+
+.nameBtn:hover {
+  opacity: 0.8;
+  background: rgba(212, 168, 67, 0.05);
+}
+
+.activeName {
+  opacity: 1;
+  background: rgba(212, 168, 67, 0.1);
+  border-left: 3px solid var(--gold);
+}
+
+.btnContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--gold-dark);
+  box-shadow: var(--shadow-deep);
+}
+
+.btnTextInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameBtn h4 {
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  margin-bottom: 0.2rem;
+  transition: var(--transition-fast);
+}
+
+.activeName h4 {
+  color: var(--gold);
+  transform: translateX(5px);
+}
+
+.venue {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.quoteArea {
+  position: relative;
+  padding: 3rem;
+  background: rgba(58, 17, 24, 0.4);
+  border: 1px solid rgba(212, 168, 67, 0.2);
+  border-radius: 4px;
+}
+
+.activeReviewContent {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.quoteWrapper {
+  flex: 1;
+}
+
+.largePhotoWrapper {
+  flex: 0.8;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  aspect-ratio: 4/5;
+  border: 1px solid var(--gold-dark);
+}
+
+.largePhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.largePhotoWrapper:hover .largePhoto {
+  transform: scale(1.05);
+}
+
+.goldCorner {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  z-index: 2;
+}
+
+.quoteIcon {
+  font-family: var(--font-playfair);
+  font-size: 6rem;
+  color: var(--gold-dark);
+  line-height: 0;
+  height: 3rem;
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+.reviewText {
+  color: var(--ivory);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-style: italic;
+  font-family: var(--font-playfair);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+  .reviewLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .namesList {
+    border-right: none;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.2);
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.8rem;
+  }
+
+  .namesList::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nameBtn {
+    flex-shrink: 0;
+    min-width: 200px;
+  }
+
+  .activeReviewContent {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .largePhotoWrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviewsSection {
+    padding: 5rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .header h2 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .quoteArea {
+    padding: 1.5rem;
+  }
+
+  .reviewText {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .quoteIcon {
+    font-size: 4rem;
+    height: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .nameBtn {
+    min-width: 180px;
+    padding: 0.8rem;
+  }
+
+  .nameBtn h4 {
+    font-size: 1.2rem;
+  }
+
+  .avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .largePhotoWrapper {
+    max-width: 100%;
+    aspect-ratio: 3/4;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviewsSection {
+    padding: 3rem 0.8rem;
+  }
+
+  .header h2 {
+    font-size: 1.8rem;
+  }
+
+  .reviewText {
+    font-size: 1rem;
+  }
+
+  .nameBtn {
+    min-width: 160px;
+  }
+
+  .quoteArea {
+    padding: 1rem;
+  }
+}
