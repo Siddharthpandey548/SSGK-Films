@@ -69,7 +69,6 @@ export default function FullscreenMenu({ isOpen, onClose }) {
                       className={`${styles.menuLink} ${pathname === link.href ? styles.activeLink : ''}`} 
                       onClick={onClose}
                     >
-                      <span className={styles.linkNumber}>0{index + 1}</span>
                       <span className={styles.linkText}>{link.name}</span>
                     </Link>
                   </motion.div>

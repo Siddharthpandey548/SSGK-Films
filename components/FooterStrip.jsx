@@ -18,7 +18,7 @@ export default function FooterStrip() {
             <ul className={styles.linksList}>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/philosophy">Philosophy</Link></li>
-              <li><Link href="/awards">Awards</Link></li>
+
               <li><Link href="/our-craft">Our Craft</Link></li>
             </ul>
           </div>

@@ -36,19 +36,19 @@ export default function FaqsPage() {
 
   return (
     <main className={styles.page}>
-      
+
       {/* Background Layer */}
       <div className={styles.backgroundLayer}>
-        <img 
-          src="/images/mehndi_hands.png" 
-          alt="Cinematic background" 
-          className={styles.bgImage} 
+        <img
+          src="/images/mehndi_hands.png"
+          alt="Cinematic background"
+          className={styles.bgImage}
         />
         <div className={styles.bgGradient}></div>
       </div>
 
       <div className={styles.content}>
-        
+
         {/* Header */}
         <div className={styles.header}>
           <h1 className={styles.title}>Navigating Your Story</h1>
