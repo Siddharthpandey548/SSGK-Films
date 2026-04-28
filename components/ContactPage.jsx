@@ -3,20 +3,55 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './ContactPage.module.css';
+import DatePicker from './DatePicker';
+import PlaceSelect from './PlaceSelect';
 
 const steps = [
-  { question: 'What is your date?', placeholder: 'e.g. December 15, 2026', type: 'text' },
-  { question: 'What is your venue?', placeholder: 'e.g. Taj Lake Palace, Udaipur', type: 'text' },
-  { question: 'Your name & partner\'s name?', placeholder: 'e.g. Priya & Arjun', type: 'text' },
-  { question: 'How can we reach you?', placeholder: 'your@email.com', type: 'email' },
+  { question: 'When is the celebration?', placeholder: 'Choose your auspicious date', type: 'date' },
+  { question: 'Where does the story unfold?', placeholder: 'Type a city or place', type: 'place' },
+  { question: 'The names behind the love story?', placeholder: 'e.g. Priya & Arjun', type: 'text' },
+  { question: 'How shall we reach you?', placeholder: 'your@email.com', type: 'email' },
 ];
+
+const errorMessages = {
+  empty: {
+    0: '✦ Every great love story has a date — please choose yours',
+    1: '✦ The setting matters — tell us where the magic unfolds',
+    2: '✦ We would love to know the names behind this beautiful story',
+    3: '✦ A way to connect — so we can begin crafting your legacy',
+  },
+  email: '✦ This doesn\'t look quite right — please share a valid email',
+};
 
 export default function ContactPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
+  const validate = () => {
+    const value = (answers[currentStep] || '').trim();
+    
+    if (!value) {
+      setError(errorMessages.empty[currentStep]);
+      return false;
+    }
+
+    if (steps[currentStep].type === 'email') {
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(value)) {
+        setError(errorMessages.email);
+        return false;
+      }
+    }
+
+    setError('');
+    return true;
+  };
 
   const handleNext = () => {
+    if (!validate()) return;
+
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
@@ -26,6 +61,14 @@ export default function ContactPage() {
 
   const handleInput = (value) => {
     setAnswers({ ...answers, [currentStep]: value });
+    if (error) setError('');
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleNext();
+    }
   };
 
   return (
@@ -108,15 +151,29 @@ export default function ContactPage() {
                   className={styles.stepContent}
                 >
                   <label className={styles.stepQuestion}>{steps[currentStep].question}</label>
+                  
                   <div className={styles.inputRow}>
-                    <input
-                      type={steps[currentStep].type}
-                      placeholder={steps[currentStep].placeholder}
-                      value={answers[currentStep] || ''}
-                      onChange={(e) => handleInput(e.target.value)}
-                      className={styles.stepInput}
-                      autoFocus
-                    />
+                    {steps[currentStep].type === 'date' ? (
+                      <DatePicker
+                        value={answers[currentStep] || ''}
+                        onChange={(val) => handleInput(val)}
+                      />
+                    ) : steps[currentStep].type === 'place' ? (
+                      <PlaceSelect
+                        value={answers[currentStep] || ''}
+                        onChange={(val) => handleInput(val)}
+                      />
+                    ) : (
+                      <input
+                        type={steps[currentStep].type}
+                        placeholder={steps[currentStep].placeholder}
+                        value={answers[currentStep] || ''}
+                        onChange={(e) => handleInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        className={styles.stepInput}
+                        autoFocus
+                      />
+                    )}
                     <button className={styles.arrowBtn} onClick={handleNext} aria-label="Next">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <line x1="5" y1="12" x2="19" y2="12"/>
@@ -124,6 +181,22 @@ export default function ContactPage() {
                       </svg>
                     </button>
                   </div>
+
+                  {/* Error message */}
+                  <AnimatePresence>
+                    {error && (
+                      <motion.p
+                        className={styles.errorMsg}
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        {error}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+
                   <div className={styles.stepMeta}>
                     <span className={styles.stepCount}>Step {currentStep + 1} of {steps.length}</span>
                   </div>
