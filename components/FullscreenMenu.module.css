@@ -136,22 +136,24 @@
 .linksCol {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.3rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 /* === Menu Links === */
 .menuLink {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.9rem 1rem;
+  justify-content: center;
+  padding: 0.9rem 1.5rem;
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 8px;
   position: relative;
   min-height: 52px;
+  width: 100%;
 }
 
 .menuLink:hover,
@@ -161,18 +163,9 @@
 
 .activeLink {
   background: rgba(212, 168, 67, 0.08);
-  border-left: 3px solid var(--gold);
 }
 
-.linkNumber {
-  font-family: var(--font-plus-jakarta), sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--gold);
-  opacity: 0.5;
-  letter-spacing: 0.05em;
-  min-width: 1.5rem;
-}
+/* linkNumber removed — bullets no longer shown */
 
 .linkText {
   font-family: var(--font-playfair), serif;
@@ -302,7 +295,8 @@
   }
 
   .linksCol {
-    max-width: 500px;
+    max-width: 600px;
+    align-items: center;
   }
 
   .linkText {
@@ -315,7 +309,7 @@
   }
 
   .menuLink:hover {
-    transform: translateX(10px);
+    transform: scale(1.03);
   }
 
   .ctaButton {
